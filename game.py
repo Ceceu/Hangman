@@ -1,4 +1,10 @@
+import os
 import random
+
+
+# define our clear function
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 # updates guess_letters.
@@ -16,6 +22,8 @@ def update_guess_letters(guess_letter, guess_letters, secret_word):
 
 # shows the status of the game.
 def print_status(guess_letters, errors):
+    clear()
+    print("\n[ Hangman Game ]\n")
     print("  _______     ")
     print(" |/      |    ")
 
@@ -73,7 +81,6 @@ def print_status(guess_letters, errors):
 
 
 def play():
-    print("\n[ Welcome to Hangman ]\n")
     secret_word = getWord()
     guess_letters = ["__" for letter in secret_word]
     guess_letters.insert(0, " | ")
@@ -93,7 +100,13 @@ def play():
         else:
             errors += 1
             lost = errors == 7
+
         print_status(guess_letters, errors)
+
+        if win:
+            print("\n[ You Won ] \o/")
+        elif lost:
+            print("\n[ You Lose ] :(")
 
 
 def getWord():
