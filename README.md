@@ -9,7 +9,7 @@ Just a simple game to learn Python 3.
  |      (_)   
  |      \|/   
  |       |    
- |      / \   
+ |      /    
  |            
  |  __ A __ __ B __ __ __ __
 
